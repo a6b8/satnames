@@ -2,20 +2,23 @@
 
 # SatNames
 
-Diese
+## Introduction
+
+This module allows you to derive the satellite name from ordinal satellite numbers. Additionally, it provides the ability to search for specific patterns in UTXOs within a given range.
 
 ## Table of Contents
 
 - [SatNames](#satnames)
+  - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Quickstart](#quickstart)
-  - [.toSatName({...})](#tosatname)
+  - [.toSatName( {...} )](#tosatname--)
   - [.toSatNumber( {...} )](#tosatnumber--)
   - [.setSimplePattern( { 'pattern': '...' } )](#setsimplepattern--pattern---)
   - [.setCustomPattern( { 'challenges': \[ {...} \] )](#setcustompattern--challenges----)
     - [Overview](#overview)
     - [Example](#example)
-  - [.getPatternsForSatRange( { 'from': '123', 'to': '134' } )](#getpatternsforsatrange--from-123-to-134--)
+  - [.getPatternsForSatRange( {...} )](#getpatternsforsatrange--)
   - [Contributing](#contributing)
   - [Limitations](#limitations)
   - [Credits](#credits)
@@ -31,6 +34,7 @@ npm i satnames
 ```
 
 index.mjs
+
 ```js
 import { SatNames } from 'satnames'
 
@@ -44,7 +48,7 @@ const satName = satNames
 console.log( `Check out the sleepiest sat: ${satName}`)
 ```
 
-## .toSatName({...})
+## .toSatName( {...} )
 
 | Option       | Description                                             | Type   | Required |
 |--------------|---------------------------------------------------------|--------|----------|
@@ -213,13 +217,20 @@ console.log( 'result', result )
 ```
 
 
-## .getPatternsForSatRange( { 'from': '123', 'to': '134' } )
+## .getPatternsForSatRange( {...} )
 
 | Option  | Description                                              | Type   | Required |
 |---------|----------------------------------------------------------|--------|----------|
 | from    | The starting satellite number                            | string | true     |
 | to      | The ending satellite number                              | string | true     |
 
+
+```js
+satNames
+    .init()
+    .setSimplePattern( { 'pattern': 'zzzzzzzzzz' } )
+    .getPatternsForSatRange( { 'from': '123', 'to': '134' } )
+```
 
 ```js
 import { SatNames } from 'satnames'
