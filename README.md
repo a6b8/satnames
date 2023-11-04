@@ -9,13 +9,13 @@ Diese
 - [SatNames](#satnames)
   - [Table of Contents](#table-of-contents)
   - [Quickstart](#quickstart)
-  - [.toSatName( { 'satNumber': '123' } )](#tosatname--satnumber-123--)
-  - [toSatNumber( { 'satName': 'abc' } )](#tosatnumber--satname-abc--)
-  - [setSimplePattern( { 'pattern': '...' } )](#setsimplepattern--pattern---)
-  - [setCustomPattern( { 'challenges': \[ {...} \] )](#setcustompattern--challenges----)
+  - [.toSatName({...})](#tosatname)
+  - [.toSatNumber( {...} )](#tosatnumber--)
+  - [.setSimplePattern( { 'pattern': '...' } )](#setsimplepattern--pattern---)
+  - [.setCustomPattern( { 'challenges': \[ {...} \] )](#setcustompattern--challenges----)
     - [Overview](#overview)
     - [Example](#example)
-  - [getPatternsForSatRange( { 'from': '123', 'to': '134' } )](#getpatternsforsatrange--from-123-to-134--)
+  - [.getPatternsForSatRange( { 'from': '123', 'to': '134' } )](#getpatternsforsatrange--from-123-to-134--)
   - [Contributing](#contributing)
   - [Limitations](#limitations)
   - [Credits](#credits)
@@ -44,7 +44,19 @@ const satName = satNames
 console.log( `Check out the sleepiest sat: ${satName}`)
 ```
 
-## .toSatName( { 'satNumber': '123' } )
+## .toSatName({...})
+
+| Option       | Description                                             | Type   | Required |
+|--------------|---------------------------------------------------------|--------|----------|
+| satNumber    | The satellite number for which you want to get the name | string | true     |
+
+Examples:
+
+```js
+satNames
+    .toSatName( { 'satNumber': '123' } )
+    .getSatName()
+```
 
 ```js
 import { SatNames } from 'satnames'
@@ -59,7 +71,20 @@ console.log( 'result', result )
 ```
 
 
-## toSatNumber( { 'satName': 'abc' } )
+## .toSatNumber( {...} )
+
+| Option   | Description                                       | Type   | Required |
+|----------|---------------------------------------------------|--------|----------|
+| satName  | The satellite name for which you want to get the number | string | true     |
+
+Examples:
+
+```js
+satNames
+    .toSatNumber( { 'satNumber': '123' } )
+    .getSatNUmber()
+```
+
 ```js
 import { SatNames } from 'satnames'
 
@@ -73,7 +98,11 @@ console.log( 'result', result )
 ```
 
 
-## setSimplePattern( { 'pattern': '...' } )
+## .setSimplePattern( { 'pattern': '...' } )
+
+| Option   | Description                                        | Type   | Required |
+|----------|----------------------------------------------------|--------|----------|
+| pattern  | The pattern or regular expression to search for   | string | true     |
 
 With the .setSimplePattern( { 'pattern': 'abc' } ) method, you can easily perform searches. Since the search is performed using a regular expression, you can also input regex patterns like /abc/.
 
@@ -95,7 +124,7 @@ console.log( 'result', result )
 ```
 
 
-## setCustomPattern( { 'challenges': [ {...} ] )
+## .setCustomPattern( { 'challenges': [ {...} ] )
 
 ### Overview
 
@@ -184,10 +213,16 @@ console.log( 'result', result )
 ```
 
 
-## getPatternsForSatRange( { 'from': '123', 'to': '134' } )
+## .getPatternsForSatRange( { 'from': '123', 'to': '134' } )
+
+| Option  | Description                                              | Type   | Required |
+|---------|----------------------------------------------------------|--------|----------|
+| from    | The starting satellite number                            | string | true     |
+| to      | The ending satellite number                              | string | true     |
+
 
 ```js
-import { SatNames } from './src/SatNames.mjs'
+import { SatNames } from 'satnames'
 
 const satNames = new SatNames()
 satNames
@@ -199,8 +234,6 @@ const results = satNames
 
 console.log( 'results', results )
 ```
-
-
 
 ## Contributing
 
