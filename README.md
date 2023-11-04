@@ -1,4 +1,4 @@
-![CircleCI](https://img.shields.io/circleci/build/github/a6b8/ordinals-sat-names-finder-for-nodejs/main)
+![CircleCI](https://img.shields.io/circleci/build/github/a6b8/satnames/main)
 
 # Ordinals Sat Names Finder for node.js
 
@@ -245,7 +245,7 @@ console.log( 'results', results )
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/a6b8/ordinals-sat-names-finder-for-nodejs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/a6b8/ordinals-sat-names-finder-for-nodejs/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/a6b8/satnames. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/a6b8/satnames/blob/main/CODE_OF_CONDUCT.md).
 
 ## Limitations
 
@@ -258,10 +258,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/a6b8/o
 
 ## License
 
-The module is available as open source under the terms of the [MIT](https://github.com/a6b8/ordinals-sat-names-finder-for-nodejs/blob/main/LICENSE).
+The module is available as open source under the terms of the [MIT](https://github.com/a6b8/satnames/blob/main/LICENSE).
 
 ## Code of Conduct
 
-Everyone interacting in the EasyMina project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/a6b8/ordinals-sat-names-finder-for-nodejs/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the EasyMina project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/a6b8/satnames/blob/main/CODE_OF_CONDUCT.md).
 
 
