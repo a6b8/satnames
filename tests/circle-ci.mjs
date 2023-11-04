@@ -27,9 +27,13 @@ const results = tests
     .map( test => {
         let r = null
         if( Object.hasOwn( test, 'satNumber' ) )  {
-            r = satNames.toSatName( { 'satNumber': test['satNumber'] } )
+            r = satNames
+                .toSatName( { 'satNumber': test['satNumber'] } )
+                .getSatName()
         } else {
-            r = satNames.toSatNumber( { 'satName': test['satName'] } )
+            r = satNames
+                .toSatNumber( { 'satName': test['satName'] } )
+                .getSatNumber()
         }
         return r === test['expect']
     } )
