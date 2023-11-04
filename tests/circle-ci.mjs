@@ -37,8 +37,8 @@ const results = tests
 
 if( results ) {
     console.log( `All Test was successful!` )
-    process.exit( 1 )
+    process.exit( 0 )
 } else {
     console.log( 'Tests failed.' )
-    process.exit( 0 )
+    process.exit( 1 )
 }
