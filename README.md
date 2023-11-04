@@ -1,20 +1,17 @@
 ![CircleCI](https://img.shields.io/circleci/build/github/a6b8/satNames/main)
 
-# SatNames
-
-## Introduction
+# Ordinals Sat Name Finder
 
 This module allows you to derive the satellite name from ordinal satellite numbers. Additionally, it provides the ability to search for specific patterns in UTXOs within a given range.
 
 ## Table of Contents
 
-- [SatNames](#satnames)
-  - [Introduction](#introduction)
+- [Ordinals Sat Name Finder](#ordinals-sat-name-finder)
   - [Table of Contents](#table-of-contents)
   - [Quickstart](#quickstart)
   - [.toSatName( {...} )](#tosatname--)
   - [.toSatNumber( {...} )](#tosatnumber--)
-  - [.setSimplePattern( { 'pattern': '...' } )](#setsimplepattern--pattern---)
+  - [.setSimplePattern( {...} )](#setsimplepattern--)
   - [.setCustomPattern( { 'challenges': \[ {...} \] )](#setcustompattern--challenges----)
     - [Overview](#overview)
     - [Example](#example)
@@ -102,7 +99,7 @@ console.log( 'result', result )
 ```
 
 
-## .setSimplePattern( { 'pattern': '...' } )
+## .setSimplePattern( {...} )
 
 | Option   | Description                                        | Type   | Required |
 |----------|----------------------------------------------------|--------|----------|
