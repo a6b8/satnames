@@ -161,7 +161,6 @@ export class SatNames {
             const result = this
                 .toSatName( { 'satNumber': `${i}` } )
                 .getPatternsForSatName()
-
             results.push( result )
         }
 

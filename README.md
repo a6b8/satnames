@@ -1,12 +1,12 @@
 ![CircleCI](https://img.shields.io/circleci/build/github/a6b8/satNames/main)
 
-# Ordinals Sat Name Finder
+# Sat Names Finder for node.js
 
 This module allows you to derive the satellite name from ordinal satellite numbers. Additionally, it provides the ability to search for specific patterns in UTXOs within a given range.
 
 ## Table of Contents
 
-- [Ordinals Sat Name Finder](#ordinals-sat-name-finder)
+- [Sat Names Finder for node.js](#sat-names-finder-for-nodejs)
   - [Table of Contents](#table-of-contents)
   - [Quickstart](#quickstart)
   - [.toSatName( {...} )](#tosatname--)
