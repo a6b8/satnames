@@ -278,7 +278,6 @@ export class PatternFinder {
                             'value': cmd['value'],
                             'expect': cmd['expect']
                         } )
-
                         // results.push( acc[ key ]['success'] )
                         break
                     case 'regularExpression': 
@@ -328,6 +327,66 @@ export class PatternFinder {
         // process.exit( 1 )
 
         return struct
+    }
+
+
+    #patternsInSuccession( { str, option, value, expect } ) {
+        str = str.substring( 2, str.length )
+        let zeros = 0
+        let loop = true
+        while( loop ) {
+            let search
+
+            switch( option ) {
+                case 'startsWith':
+                    search = str.substring( 0, 1 )
+                    str = str.substring( 1, str.length )
+                    break
+                case 'endsWith':
+                    search = str.substring( str.length - 1, str.length )
+                    str = str.substring( 0, str.length - 1 )
+                    break
+                case 'inBetween':
+                    break
+            }
+
+            if( search !== '' ) {
+                ( search === value ) ? zeros++ : loop = false
+            } else {
+                loop = false
+            }
+        }
+
+        const result = {
+            'value': zeros,
+            'success': null
+        }
+
+        switch( expect['logic'] ) {
+            case '=':
+                result['success'] = ( zeros === expect['value'] ) ? true : false
+                break
+            case '>':
+                result['success'] = ( zeros > expect['value'] ) ? true : false
+                break
+            case '>=':
+                result['success'] = ( zeros >= expect['value'] ) ? true : false
+                break
+            case '<':
+                result['success'] = ( zeros < expect['value'] ) ? true : false
+                break
+            case '<=':
+                result['success'] = ( zeros <= expect['value'] ) ? true : false
+                break
+            default:
+                this.printMsg( { 
+                    'type': 'error', 
+                    'str': `Logic "${expect['logic']}" is not known.` 
+                } )
+                break
+        }
+        
+        return result
     }
 
 

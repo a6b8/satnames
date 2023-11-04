@@ -46,7 +46,7 @@ export class SatNames {
     }
 
 
-    setDefaultPattern( { pattern=null } ) {
+    setSimplePattern( { pattern=null } ) {
         this.#debug ? console.log( ' - Activate Default Challenges' ) : ''
         if( typeof( pattern ) !== 'string' ) {
             throw new Error( `  Variable pattern "${pattern}" is not type string` )
@@ -59,7 +59,7 @@ export class SatNames {
         defaultChallenges[ 0 ]['logic'][ 0 ]['value'] = pattern
         this.#patternFinder.setChallenges( { 'challenges': defaultChallenges } )
 
-        return true
+        return this
     }
 
 
@@ -67,7 +67,7 @@ export class SatNames {
         this.#debug ? console.log( ' - Activate Custom Challenges' ) : ''
         this.#patternFinder.setChallenges( { 'challenges': customChallenges } )
 
-        return true
+        return this
     }
 
 
@@ -98,15 +98,19 @@ export class SatNames {
             .reverse()
             .join( '' )
 
-        this.#state['current'] = { satNumber, satName }
+        this.#state['current'] = { 'satNumber': satNumber.toString(), satName }
 
-        return satName
+        return this
     }
 
 
     toSatNumber( { satName } ) {
         if( typeof satName !== 'string' ) {
-            throw new Error( `satName is not type of "string"` )
+            throw new Error( `"satName" is not type of "string"` )
+        } else {
+            if( satName.length > 13 ) {
+                throw new Error( `"satName" is to long.` )
+            }
         }
 
         const x = satName
@@ -122,11 +126,20 @@ export class SatNames {
 
         this.#state['current'] = { satNumber, satName }
         
-        return satNumber
+        return this
     }
 
 
-    checkPatterns() {
+    getSatName() {
+        return this.#state['current']['satName']
+    }
+
+    getSatNumber() {
+        return this.#state['current']['satNumber']
+    }
+
+
+    getPatternsForSatName() {
         if( !Object.hasOwn( this.#state['current'], 'satName' ) ) {
             throw new Error( `Execute before .toSatName()` )
         }
@@ -139,5 +152,19 @@ export class SatNames {
         }
 
         return result
+    }
+
+
+    getPatternsForSatRange( { from, to } ) {
+        const results = []
+        for( let i = BigInt( from ); i < BigInt( to ); i++ ) {
+            const result = this
+                .toSatName( { 'satNumber': `${i}` } )
+                .getPatternsForSatName()
+
+            results.push( result )
+        }
+
+        return results
     }
 }
