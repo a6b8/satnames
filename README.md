@@ -1,4 +1,4 @@
-![CircleCI](https://img.shields.io/circleci/build/github/a6b8/satNames/main)
+![CircleCI](https://img.shields.io/circleci/build/github/a6b8/ordinals-sat-names-finder-for-nodejs/main)
 
 # Ordinals Sat Names Finder for node.js
 
