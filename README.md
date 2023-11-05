@@ -9,13 +9,14 @@ This module allows you to derive the satellite name from ordinal satellite numbe
 - [Ordinals Sat Names Finder for node.js](#ordinals-sat-names-finder-for-nodejs)
   - [Table of Contents](#table-of-contents)
   - [Quickstart](#quickstart)
-  - [.toSatName( {...} )](#tosatname--)
-  - [.toSatNumber( {...} )](#tosatnumber--)
-  - [.setSimplePattern( {...} )](#setsimplepattern--)
-  - [.setCustomPattern( { 'challenges': \[ {...} \] )](#setcustompattern--challenges----)
-    - [Overview](#overview)
-    - [Example](#example)
-  - [.getPatternsForSatRange( {...} )](#getpatternsforsatrange--)
+  - [Methods](#methods)
+    - [.toSatName( {...} )](#tosatname--)
+    - [.toSatNumber( {...} )](#tosatnumber--)
+    - [.setSimplePattern( {...} )](#setsimplepattern--)
+    - [.setCustomPattern( { 'challenges': \[ {...} \] )](#setcustompattern--challenges----)
+      - [Overview](#overview)
+      - [Example](#example)
+    - [.getPatternsForSatRange( {...} )](#getpatternsforsatrange--)
   - [Contributing](#contributing)
   - [Limitations](#limitations)
   - [Credits](#credits)
@@ -45,7 +46,9 @@ const satName = satNames
 console.log( `Check out the sleepiest sat: ${satName}`)
 ```
 
-## .toSatName( {...} )
+## Methods
+
+### .toSatName( {...} )
 
 | Option       | Description                                             | Type   | Required |
 |--------------|---------------------------------------------------------|--------|----------|
@@ -72,7 +75,7 @@ console.log( 'result', result )
 ```
 
 
-## .toSatNumber( {...} )
+### .toSatNumber( {...} )
 
 | Option   | Description                                       | Type   | Required |
 |----------|---------------------------------------------------|--------|----------|
@@ -99,7 +102,7 @@ console.log( 'result', result )
 ```
 
 
-## .setSimplePattern( {...} )
+### .setSimplePattern( {...} )
 
 | Option   | Description                                        | Type   | Required |
 |----------|----------------------------------------------------|--------|----------|
@@ -125,9 +128,9 @@ console.log( 'result', result )
 ```
 
 
-## .setCustomPattern( { 'challenges': [ {...} ] )
+### .setCustomPattern( { 'challenges': [ {...} ] )
 
-### Overview
+#### Overview
 
 **Methods**
 The following pattern methods are available:
@@ -151,7 +154,7 @@ Under `expect`, you need to specify a logic, and the following cases are availab
 | Default  | Display an error message if the logic is not recognized |
 
 
-### Example
+#### Example
 
 You can add as many challenges as you like using `.setCustomPattern( { 'challenges': [ {...} ] }`. For this purpose, there are the methods `inSuccession` with the options `startsWith` and `endsWith`, or `regularExpression`, where no option is needed.
 
@@ -214,7 +217,7 @@ console.log( 'result', result )
 ```
 
 
-## .getPatternsForSatRange( {...} )
+### .getPatternsForSatRange( {...} )
 
 | Option  | Description                                              | Type   | Required |
 |---------|----------------------------------------------------------|--------|----------|
